@@ -5,10 +5,10 @@
     position: relative;
     background-size: cover;
     background-repeat: no-repeat;
-    overflow: visible;
+    overflow: hidden;
     background-position: center center;
     &::before {
-        position: relative;
+        position: absolute;
         left: 0;
         top: 0;
         right: 0;
