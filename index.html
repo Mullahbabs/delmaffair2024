@@ -416,7 +416,7 @@
 			<div class="row">
 				<div class="col-lg-12 col-sm-12 col-xs-12">
 				  <div class="contact-block">
-					<form id="contactForm">
+					<form id="contactForm" onsubmit="sendMail(event)">
 					  <div class="row">
 						<div class="col-md-12">
 							<div class="form-group">
@@ -499,5 +499,29 @@
 	<script src="js/form-validator.min.js"></script>
     <script src="js/contact-form-script.js"></script>
     <script src="js/custom.js"></script>
+
+	<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+	<script>
+		// Initialize EmailJS with your User ID
+		(function() {
+			emailjs.init("S-xQwmEV2I8oavOc1");
+		})();
+	
+		// Function to handle form submission
+		function sendMail(event) {
+			event.preventDefault();  // Prevent default form submission
+	
+			// Use EmailJS to send form data
+			emailjs.sendForm('service_5tf829h', 'template_y9u8ba5', '#contactForm')
+			.then((result) => {
+				alert("RSVP Successful!");
+				document.getElementById("contactForm").reset();  // Optional: reset form after submission
+			}, (error) => {
+				alert("Failed to send form: " + error.text);
+			});
+		}
+	  </script>
+
 </body>
 </html>
