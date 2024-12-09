@@ -445,11 +445,11 @@
 							<div class="form-group">
 								<select class="custom-select d-block form-control" id="guest" name="guest" required data-error="Please select an item in the list.">
 								  <option disabled selected>Number Of Guest</option>
-								  <option value="1">1</option>
-								  <option value="2">2</option>
-								  <option value="3">3</option>
-								  <option value="4">4</option>
-								  <option value="5">5</option>
+								  <option value="one">1</option>
+								  <option value="two">2</option>
+								  <option value="three">3</option>
+								  <option value="four">4</option>
+								  <option value="na wa">5</option>
 								</select>
 								<div class="help-block with-errors"></div>
 							</div> 
@@ -526,7 +526,7 @@
 			// Use EmailJS to send form data
 			emailjs.sendForm('service_5tf829h', 'template_y9u8ba5', '#contactForm')
 			.then((result) => {
-				alert("RSVP Successful! See you @ De'L&M Affair 2024");
+				alert("Relax, you filled the form properly. See you @ De'L&M Affair 2024");
 				document.getElementById("contactForm").reset();  // Optional: reset form after submission
 			}, (error) => {
 				alert("Failed to send form: " + error.text);
